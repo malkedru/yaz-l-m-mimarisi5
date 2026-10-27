@@ -1,0 +1,69 @@
+{
+  "pipeline": {
+    "name": "dirty-fail-fast",
+    "source": {
+      "type": "file",
+      "params": {
+        "path": "data/access-dirty.log"
+      }
+    },
+    "stages": [
+      {
+        "type": "parse",
+        "params": {
+          "format": "clf",
+          "maxLineBytes": 65536
+        },
+        "onError": "FAIL_FAST"
+      },
+      {
+        "type": "validate",
+        "params": {
+          "required": [
+            "timestamp",
+            "clientIp",
+            "method",
+            "path",
+            "status"
+          ],
+          "ranges": {
+            "bytes": {
+              "min": 0,
+              "max": 1000000000
+            },
+            "status": {
+              "min": 100,
+              "max": 599
+            }
+          },
+          "timestamp": {
+            "min": 946684800,
+            "max": 1893455999
+          },
+          "ip": true
+        },
+        "onError": "FAIL_FAST"
+      },
+      {
+        "type": "project",
+        "params": {
+          "fields": [
+            "timestamp",
+            "clientIp",
+            "method",
+            "path",
+            "status",
+            "bytes"
+          ]
+        },
+        "onError": "FAIL_FAST"
+      }
+    ],
+    "sink": {
+      "type": "file",
+      "params": {
+        "path": "out/dirty-fail-fast.tsv"
+      }
+    }
+  }
+}

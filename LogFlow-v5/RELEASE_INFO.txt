@@ -1,0 +1,6 @@
+LogFlow v5 - Turkish characters transliterated to ASCII
+Based on v5; source contains uncommitted text-only transliterations.
+Tests: 9 programs, 367/367 assertions passed (MSVC).
+Run from LogFlow-v5 directory: .\logflow.exe --config configs/dirty-dead-letter.json
+Expected: received=11, emitted=3, deadLettered=8, reconciled=true.
+Build instructions: README.md

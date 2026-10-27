@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "LogFlow v5: dirty log + dead-letter",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/logflow.exe",
+      "args": [
+        "--config",
+        "configs/dirty-dead-letter.json"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "preLaunchTask": "LogFlow: build"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+build/
+.vs/
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.tmp
+out/*
+!out/.gitkeep
+out.tsv
+releases/

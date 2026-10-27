@@ -1,0 +1,14 @@
+{
+  "version": 4,
+  "configurations": [
+    {
+      "name": "LogFlow MSVC x64",
+      "compilerPath": "C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/cl.exe",
+      "includePath": ["${workspaceFolder}"],
+      "defines": ["_WIN32"],
+      "cStandard": "c11",
+      "cppStandard": "c++14",
+      "intelliSenseMode": "windows-msvc-x64"
+    }
+  ]
+}
